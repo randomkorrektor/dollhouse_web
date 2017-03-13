@@ -1,0 +1,2 @@
+module.exports = { js: { dest: "www/js/", src: "src/app.js", watch: "src/**/*.js" }, scss: { dest: "www/style/css", src: "src/style/scss/**/*.scss", watch: "src/style/scss/**/*.scss" }, html: { dest: "www/", src: "src/**/*.html", watch: "src/**/*.html" }, images: { dest: "www/style/img/", src: "src/style/img/**/*.*", watch: "src/style/img/**/*.*" }, libs: { dest: "www/libs/", src: "src/libs/**/*.*" }, fonts: { dest: "www/style/font/", src: "src/style/font/**/*.*" } };
+
