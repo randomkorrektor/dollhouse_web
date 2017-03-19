@@ -9,6 +9,8 @@ import Products from './containers/Products';
 import Product from './containers/Product';
 import Blog from './containers/Blog';
 import AddProduct from './containers/AddProduct';
+import Contacts from './containers/Contacts';
+import Cart from './containers/Cart';
 
 const App = ({ children }) => children;
 ReactDOM.render(
@@ -23,7 +25,8 @@ ReactDOM.render(
             <Route path="/blog" component={Blog} />
             <Route path="/addproduct" component={AddProduct} />
             <Route path="/profile" component={Profile} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/contacts" component={Contacts} />
+            <Route path="/cart" component={Cart} />
         </Route>
     </Router>, document.getElementById('root'));
 
