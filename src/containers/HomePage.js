@@ -82,7 +82,12 @@ export default class HomePage extends React.Component {
     }
 
     render() {
-        
+                //header (anyway)
+                //big picture with "Lebona" and button In shop
+                //insta photos
+                //posts
+                //footer
+
                 //const posts = this.state.posts.map((post, i) => <span key={i}>{post.text}</span>)
                 const posts = this.state.posts.map((post, i) =>
     
@@ -100,11 +105,19 @@ export default class HomePage extends React.Component {
                 
                 //displayedPosts = posts
                 return (<div>
-                        HomePage
-                        <Header />
-                        <div>    
-                            {displayedPosts}
-                        </div>
-                    </div>);
+                            HomePage
+                            <div>
+                                <ul>
+                                    <li> <Link to="/signup">SignUp</Link> </li>
+                                    <li> <Link to="/signin">SignIn</Link> </li> 
+                                </ul>
+                            </div>
+                            
+                            <Header />
+                            <div>    
+                                {displayedPosts}
+                            </div>
+                            
+                        </div>);
             }
 }
