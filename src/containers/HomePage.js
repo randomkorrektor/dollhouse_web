@@ -68,7 +68,7 @@ export default class HomePage extends React.Component {
             ]
         }
     }
-
+/*
     getPosts() {
         return fetch('http://localhost:3000/api/posts')
             .then(function (response) {
@@ -80,15 +80,11 @@ export default class HomePage extends React.Component {
     async componentDidMount() {
         this.setState({ posts: (await this.getPosts()).data });
     }
-
+*/
     render() {
-                //header (anyway)
-                //big picture with "Lebona" and button In shop
-                //insta photos
-                //posts
-                //footer
 
                 //const posts = this.state.posts.map((post, i) => <span key={i}>{post.text}</span>)
+
                 const posts = this.state.posts.map((post, i) =>
     
                     <BlogData

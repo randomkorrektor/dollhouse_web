@@ -49,6 +49,11 @@ export default class SignUpPage extends React.Component {
         }
     }
 
+    handleToggleClick(event)
+    {
+
+    }
+
     render() {
         return (<div>
                         <div>
@@ -56,7 +61,7 @@ export default class SignUpPage extends React.Component {
                                 <h2> E-mail </h2>
                                 <input
                                 id ="emailInput"
-                                name="Email"
+                                name="email"
                                 type="text"
                                 onChange={this.handleInputChange} 
                                 />
