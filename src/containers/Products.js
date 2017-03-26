@@ -35,7 +35,7 @@ export default class ProductsPage extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
-                            ProductData: [
+                            productData: [
                                             {
                                                 title: "SweetFace",
                                                 price: "25$",
@@ -69,7 +69,7 @@ export default class ProductsPage extends React.Component {
 
         render() {
 
-             const products = this.state.ProductData.map((product, i) =>
+             const products = this.state.productData.map((product, i) =>
     
                     <ProductData 
                         key={i}

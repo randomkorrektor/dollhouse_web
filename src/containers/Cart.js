@@ -1,7 +1,8 @@
 import React from 'react';
+import ImageGallery from 'react-image-gallery';
 
-export default class ProductPage extends React.Component {
-    constructor(props) {
+export default class MyComponent extends React.Component {
+ constructor(props) {
         super(props);
     }
 
@@ -10,4 +11,6 @@ export default class ProductPage extends React.Component {
             Hello world1
         </div>);
     }
+
 }
+

@@ -12,6 +12,7 @@ import AddProduct from './containers/AddProduct';
 import Contacts from './containers/Contacts';
 import Cart from './containers/Cart';
 
+
 const App = ({ children }) => children;
 ReactDOM.render(
     <Router history={hashHistory}>

@@ -2,4 +2,8 @@ SignUp
         -сформировать отправку формы
         -проверка на запрещенные символы
         -проверка email на корректность ввода (@, com и т.п)
-        
+   
+Product  
+   https://github.com/xiaolin/react-image-gallery  - ссылка на галлерею
+
+

@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
                     date: new Date().toLocaleTimeString(),
                     imgSrc: "http://static8.depositphotos.com/1000419/948/v/450/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg",
                     text: "this is small part of artilcle with little sense for",
-                    fullPostLink: "/profile"
+                    fullPostLink: "/product"
                 },
 
                 {
@@ -39,7 +39,7 @@ export default class HomePage extends React.Component {
                     date: new Date().toLocaleTimeString(),
                     imgSrc: "http://static8.depositphotos.com/1000419/948/v/450/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg",
                     text: "this is small part of artilcle with little sense for",
-                    fullPostLink: "/profile"
+                    fullPostLink: "/product"
                 },
 
                 {
@@ -47,7 +47,7 @@ export default class HomePage extends React.Component {
                     date: new Date().toLocaleTimeString(),
                     imgSrc: "http://static8.depositphotos.com/1000419/948/v/450/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg",
                     text: "this is small part of artilcle with little sense for",
-                    fullPostLink: "/profile"
+                    fullPostLink: "/product"
                 },
 
                  {
@@ -55,7 +55,7 @@ export default class HomePage extends React.Component {
                     date: new Date().toLocaleTimeString(),
                     imgSrc: "http://static8.depositphotos.com/1000419/948/v/450/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg",
                     text: "this is small part of artilcle with little sense for",
-                    fullPostLink: "/profile"
+                    fullPostLink: "/product"
                 },
 
                  {
@@ -63,7 +63,7 @@ export default class HomePage extends React.Component {
                     date: new Date().toLocaleTimeString(),
                     imgSrc: "http://static8.depositphotos.com/1000419/948/v/450/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg",
                     text: "this is small part of artilcle with little sense for",
-                    fullPostLink: "/profile"
+                    fullPostLink: "/product"
                  }
             ]
         }
