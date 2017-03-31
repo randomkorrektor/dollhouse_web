@@ -25,7 +25,6 @@ export default class SignUpPage extends React.Component {
     handleInputChange(name, event) {
         this.setState({ [name]: event.target.value });
     }
-
     async handleToggleClick(event) {
         if (this.state.password1 != this.state.password2) {
             alert('Пароли не совпадают');
@@ -58,6 +57,13 @@ export default class SignUpPage extends React.Component {
             }
         }
     }
+    componentDidMount() {
+        const session = localStorage.getItem('session');
+        if(session){
+            window.location.replace('/#/products');
+        }
+    }
+
 
     render() {
         return (<div>
