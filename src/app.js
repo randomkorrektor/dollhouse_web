@@ -17,7 +17,7 @@ const App = ({ children }) => children;
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={HomePage} />
+            <IndexRoute component={Cart} />
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
             <Route path="/profile" component={Profile} />

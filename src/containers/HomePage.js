@@ -84,7 +84,6 @@ export default class HomePage extends React.Component {
     render() {
 
                 //const posts = this.state.posts.map((post, i) => <span key={i}>{post.text}</span>)
-
                 const posts = this.state.posts.map((post, i) =>
     
                     <BlogData
@@ -101,19 +100,17 @@ export default class HomePage extends React.Component {
                 
                 //displayedPosts = posts
                 return (<div>
-                            <Header />
                             HomePage
                             <div>
                                 <ul>
                                     <li> <Link to="/signup">SignUp</Link> </li>
                                     <li> <Link to="/signin">SignIn</Link> </li> 
                                 </ul>
-                            </div>
-                            
+                            </div>                            
+                            <Header />
                             <div>    
                                 {displayedPosts}
                             </div>
-                            
                         </div>);
             }
 }

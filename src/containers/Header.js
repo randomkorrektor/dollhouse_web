@@ -17,10 +17,10 @@ export default class Header extends React.Component {
                 <img src="/style/img/Le_Bona3.png" />
             </Navbar.Header>
             <Nav pullLeft={true} className="Navbar_font">
-                <NavItem href="#" className="Navbar_font_element">Блог</NavItem>
-                <NavItem href="#" className="Navbar_font_element">Магазин</NavItem>
-                <NavItem href="#" className="Navbar_font_element">Контакты</NavItem>
-                <NavItem href="#" className="Navbar_font_element">Корзина</NavItem>
+                <NavItem href="#/blog" className="Navbar_font_element">Блог</NavItem>
+                <NavItem href="#/products" className="Navbar_font_element">Магазин</NavItem>
+                <NavItem href="#/contacts" className="Navbar_font_element">Контакты</NavItem>
+                <NavItem href="#/cart" className="Navbar_font_element">Корзина</NavItem>
             </Nav>
             <Nav pullRight={true}>
                 <NavItem href="#">
