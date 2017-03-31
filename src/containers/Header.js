@@ -24,9 +24,9 @@ export default class Header extends React.Component {
             </Nav>
             <Nav pullRight={true}>
                 <NavItem href="#">
-                    <img src="noavatar.png" />
+                    <img className="Navbar_Avatar" src="/style/img/noavatar.png" />
                 </NavItem>
-                <NavDropdown title="User name" id="basic-nav-dropdown">
+                <NavDropdown title="User name" className="DropHigh UserName" >
                     <MenuItem >Профиль</MenuItem>
                     <MenuItem>Выход</MenuItem>
                 </NavDropdown>
