@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import Header from './Header';
 import Footer from './Footer';
 import {
@@ -53,62 +54,42 @@ export default class SignUpPage extends React.Component {
     render() {
         return (<div>
             <Header />
-            <div>
-                <label>
-                    <h2> E-mail </h2>
-                    <input
-                        id="emailInput"
-                        name="email"
-                        type="text"
-                        onChange={this.handleInputChange}
-                    />
-                </label>
-            </div>
-
-            <div>
-                <label>
-                    <h2> Пароль </h2>
-                    <input
-                        id="passwordInput"
-                        name="password"
-                        type="password"
-                        onChange={this.handleInputChange}
-                    />
-                </label>
-            </div>
-
-            <div>
-                <label>
-                    <h2> Повторите пароль </h2>
-                    <input
-                        id="password2Input"
-                        name="password2"
-                        type="password"
-                        onChange={this.handleInputChange}
-                    />
-                </label>
-            </div>
-
-            <div>
-                <label id="passCheckLabel" >
-                    <h4> {this.state.message} </h4>
-                </label>
-            </div>
-
-            <div>
-                <input
-                    name="subscribeCheck"
-                    type="checkbox"
-                    checked={this.state.subcribeCheck}
-                    onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div>
-                <button onClick={this.handleToggleClick}>
-                    РЕГИСТРАЦИЯ
-                            </button>
-            </div>
+            <Grid fluid={true}>
+                <Row className="row">
+                    <Col lg={12}>
+                        <Col lg={6} id="body_content">
+                            <div>
+                                <form role="form">
+                                    <h2 className="Font_Caption">Регистрация</h2>
+                                    <h3 className="Font_main">Введите имя</h3>
+                                    <input type="email" className="form-control form_border" required autofocus />
+                                    <h3 className="Font_main">E-mail</h3>
+                                    <input type="email" className="form-control form_border" required autofocus id="emailInput"
+                                        name="email"
+                                        type="text"
+                                        onChange={this.handleInputChange} />
+                                    <h3 className="Font_main">Пароль</h3>
+                                    <input type="password" className="form-control form_border" required
+                                        id="passwordInput"
+                                        name="password"
+                                        type="password"
+                                        onChange={this.handleInputChange} />
+                                    <h3 className="Font_main">Повторите пароль</h3>
+                                    <input type="password" className="form-control form_border" required
+                                        id="password2Input"
+                                        name="password2"
+                                        type="password"
+                                        onChange={this.handleInputChange} />
+                                    <li id="Sign_up" onClick={this.handleToggleClick}><a href="#" id="Sign_in">Зарегистрироваться</a></li>
+                                    <label id="passCheckLabel" >
+                                        <h4> {this.state.message} </h4>
+                                    </label>
+                                </form>
+                            </div>
+                        </Col>
+                    </Col>
+                </Row>
+            </Grid>
             <Footer />
         </div>);
     }
