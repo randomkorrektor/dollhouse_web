@@ -1,11 +1,20 @@
-      
-        @font-face {
-            font-family: Navbar_ts;
-            src: url(../fonts/header.ttf);
-        }
-        
-        @font-face {
-            font-family: othertext;
-            src: url(../fonts/othertext.ttf);
-        }
 
+@font-face {
+    font-family: Navbar_ts;
+    src: url(../fonts/header.ttf);
+}
+
+@font-face {
+    font-family: othertext;
+    src: url(../fonts/othertext.ttf);
+}
+
+
+.Navbar_ts {
+    font-family: Navbar_ts;
+    font-size: 120%;
+}
+.AGOptCyrillic {
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    font-size: 120%;
+} 

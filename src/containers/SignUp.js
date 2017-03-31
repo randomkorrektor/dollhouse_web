@@ -14,6 +14,7 @@ export default class SignUpPage extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             name: "",
             password1: "",
@@ -48,48 +49,50 @@ export default class SignUpPage extends React.Component {
         }
     }
 
-
     render() {
         return (<div>
             <Header />
-            <Grid fluid={true}>
-                <Row className="row">
-                    <Col lg={12}>
-                        <Col lg={6} id="body_content">
-                            <div>
-                                <form role="form">
-                                    <h2 className="Font_Caption">Регистрация</h2>
-                                    <h3 className="Font_main">Введите имя</h3>
-                                    <input type="email" className=" form-control form_border" required autofocus id="nameInput"
-                                        name="name"
-                                        type="text"
-                                        onChange={this.handleInputChange.bind(this, 'name')} />
-                                    <h3 className="Font_main">E-mail</h3>
-                                    <input type="email" className="form-control form_border" required autofocus id="emailInput"
-                                        name="email"
-                                        type="text"
-                                        onChange={this.handleInputChange.bind(this, 'email')} />
-                                    <h3 className="Font_main">Пароль</h3>
-                                    <input type="password" className="form-control form_border" required
-                                        id="passwordInput"
-                                        name="password"
-                                        type="password"
-                                        onChange={this.handleInputChange.bind(this, 'password1')} />
-                                    <h3 className="Font_main">Повторите пароль</h3>
-                                    <input type="password" className="form-control form_border" required
-                                        id="password2Input"
-                                        name="password2"
-                                        type="password"
-                                        onChange={this.handleInputChange.bind(this, 'password2')} />
-                                    <li id="Sign_up" onClick={this.handleToggleClick.bind(this)}>
-                                        <span id="Sign_in">Зарегистрироваться</span>
-                                    </li>
-                                    <label id="passCheckLabel" >
-                                        <h4> {this.state.message} </h4>
-                                    </label>
-                                </form>
+
+            <Grid className='signup_container'>
+                <Row>
+                    <Col lg={1} />
+                    <Col lg={4} className="zero_angel">
+                        <h2 className="Navbar_ts">Регистрация</h2>
+                        <div className="input_area">
+                            <div className="input_row">
+                                <h3 className="AGOptCyrillic">Введите имя</h3>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    onChange={this.handleInputChange.bind(this, 'name')}
+                                />
                             </div>
-                        </Col>
+                            <div className="input_row">
+                                <h3 className="AGOptCyrillic">E-mail</h3>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    onChange={this.handleInputChange.bind(this, 'email')}
+                                />
+                            </div>
+                            <div className="input_row">
+                                <h3 className="AGOptCyrillic">Пароль</h3>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    onChange={this.handleInputChange.bind(this, 'password1')}
+                                />
+                            </div>
+                            <div className="input_row">
+                                <h3 className="AGOptCyrillic">Повторите пароль</h3>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    onChange={this.handleInputChange.bind(this, 'password2')}
+                                />
+                            </div>
+                        </div>
+                        <div className="sign_up zero_angel AGOptCyrillic" onClick={this.handleToggleClick.bind(this)}>Зарегистрироваться</div>
                     </Col>
                 </Row>
             </Grid>
