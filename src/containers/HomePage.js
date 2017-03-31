@@ -101,6 +101,7 @@ export default class HomePage extends React.Component {
                 
                 //displayedPosts = posts
                 return (<div>
+                            <Header />
                             HomePage
                             <div>
                                 <ul>
@@ -109,7 +110,6 @@ export default class HomePage extends React.Component {
                                 </ul>
                             </div>
                             
-                            <Header />
                             <div>    
                                 {displayedPosts}
                             </div>

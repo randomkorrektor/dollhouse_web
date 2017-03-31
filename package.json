@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"gulp"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "react-bootstrap": "^0.29.5",
     "react-bootstrap-date-picker": "^3.7.0",
     "react-dom": "^0.14.7",
+    "react-image-gallery": "^0.7.15",
     "react-redux": "^4.1.2",
     "react-router": "^2.0.1",
     "redux": "^3.0.4"

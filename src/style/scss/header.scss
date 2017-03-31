@@ -1,0 +1,95 @@
+.NavigationBar {
+    height: 75px;
+
+    .container-fluid {
+        background: #a2be33;
+        height: 75px!important;
+        border-bottom: 1px solid  #666666;
+
+         .Logo>img {
+            height: 120px;
+            margin-top: 10px;
+            margin-left: 22px;
+        } 
+
+        .Navbar_font {
+            margin-left: 20px;
+            margin-top: 11px;
+
+            .Navbar_font_element {
+
+                 a {
+                    font-size: 150%;
+                    font-family: Navbar_ts, 'Arial', bold;
+                    color: #f8f8ff;
+                    padding-top: 15px;
+                    border: 1px solid #a2be33;
+                    margin: -1px -1px -1px -1px;
+
+                    &:hover {
+                        color: #FF6C0D!important;
+                    }
+                }
+
+                &:active {
+                    background: #4f5f06;
+                    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+                }
+            }
+        }
+    }
+}
+ /*
+ 
+         #Navbar_Avatar {
+            height: 30px;
+            margin-top: 20px;
+        }
+        
+        #UserName {
+            font-size: 15px!important;
+            font-size: 150%;
+            
+            font-family: Navbar_ts, 'Arial', bold;
+            color: #f8f8ff;
+            margin-left: 6px;
+            margin-right: 6px;
+            text-decoration: none;
+        }
+        #DropHigh {
+            margin-top: 27px;
+            margin-left: 5px;
+            margin-right: 20px;
+        }
+        .dropdown-menu{
+            border-radius: 0;
+            margin-top: 12px;
+            text-align: center;
+            font-family:  'AGOptCyrillic Normal', 'Arial';
+            box-shadow: 0 1px 4px rgba(0,0,0,.175);
+        }        
+        .dropdown-menu>li>a {
+            color: black;
+        }           
+        .nav .open>a,
+        .nav .open>a:focus,
+        .nav .open>a:hover {
+            background-color: #a2be33;
+            border-color: #4f5f06;
+        }
+
+        .dropdown-menu>li>a:focus, 
+        .dropdown-menu>li>a:hover {
+            color: #FF6C0D;
+            text-decoration: none;
+            background-color: #ffffff;
+        }
+
+        
+
+              
+
+        
+
+        
+*/
