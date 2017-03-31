@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Navbar_ts;
+    src: url(header.ttf);
+    }
+@font-face {
+    font-family: othertext;
+    src: url(othertext.ttf);
+    }
+.Font_Caption {
+    font-family: Navbar_ts;
+    font-size: 120%;
+    }
+.Font_main {
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    font-size: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    } 
+.body_content {
+    width: 30%;
+    margin-left: 120px;
+    margin-top: 110px;
+    margin-bottom: 30px;
+    }
+.form_border {
+    border-radius: 0!important;
+    }
+#Sign_in {
+    border-radius: 0;
+    margin-top: 20px;
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    font-size: 130%;
+    text-decoration: none;
+    color: #f8f8ff;
+    }
+#rememberme {
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    margin-top: 20px;
+    margin-left: 60%;
+    } 
+#remcheck {
+    margin-left: 10px;
+    }
+#Sign_up {
+    border-radius: 0;
+    margin-top: 60px;
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    background: #FF6C0D;
+    border: 1px solid #FF6C0D;
+    list-style-type: none;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+#sign_up:active {
+    background: #C8580F;
+    border: 1px solid #666666;
+    color: #f8f8ff!important;
+}
+        
+        

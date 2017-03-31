@@ -1,83 +1,87 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import Header from './Header';
+import Footer from './Footer';
 import {
     Link
 } from 'react-router';
 
 export default class SignInPage extends React.Component {
-    
-     constructor(props) {
+
+    constructor(props) {
         super(props);
-        this.state = {  
-                        password: " ", 
-                        email: " ", 
-                        rememberMe: "true"
-                    };
-                        
-     this.handleInputChange = this.handleInputChange.bind(this);
-     }   
+        this.state = {
+            password: "",
+            email: "",
+        };
 
-    handleInputChange(event) {
-     
-        const target = event.target;
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
 
-        if (target.type == 'checkbox') 
-        {
-            this.setState( {rememberMe: target.checked} );
-        }
-        else
-        {
-            const value = target.value;
-            const name = target.name;
-            this.setState( { [name]: value } );
+    handleInputChange(name, event) {
+        this.setState({ [name]: event.target.value });
+        console.log({ [name]: event.target.value });
+    }
+
+    async handleToggleClick(event) {
+        try {
+            const auth = await fetch(`http://192.168.0.102:3000/api/auth?email=${this.state.email}&password=${this.state.password}`)
+                .then(r => r.json())
+                .then((r) => {
+                    if (r.success) {
+                        return r.data;
+                    }
+                    throw r.error
+                });
+            localStorage.setItem('session', auth._id);
+            console.log(auth);
+            window.location.replace('/#/products')
+        } catch (e) {
+            alert(e);
         }
     }
 
-    handleToggleClick(event)
-    {
-
+    componentDidMount() {
+        const session = localStorage.getItem('session');
+        if (session) {
+            window.location.replace('/#/products');
+        }
     }
-
     render() {
         return (<div>
-                        <div>
-                            <label>
-                                <h2> E-mail </h2>
-                                <input
-                                id ="emailInput"
-                                name="email"
-                                type="text"
-                                onChange={this.handleInputChange} 
-                                />
-                            </label>
+            <Header />
+            <Grid>
+                <Row>
+                    <Col lg={6} id="body_content">
+                        <div className="container-left">
+                            <form className="form-signin" role="form">
+                                <h2 className="form-signin-heading Font_Caption">Вход в систему</h2>
+                                <h3 className="form-signin-heading Font_main">E-mail</h3>
+                                <input type="email" className="form-control form_border" placeholder="E-mail" required autofocus
+                                    id="emailInput"
+                                    name="email"
+                                    type="text"
+                                    onChange={this.handleInputChange.bind(this, 'email')} />
+                                <h3 className="form-signin-heading Font_main">Пароль</h3>
+                                <input type="password" className="form-control form_border" placeholder="Пароль" required
+                                    id="passwordInput"
+                                    name="password"
+                                    type="password"
+                                    onChange={this.handleInputChange.bind(this, 'password')} />
+                                <li className="btn btn-lg btn-primary btn-block Sign_in form_border" type="submit" onClick={this.handleToggleClick.bind(this)} >Войти</li>
+                            </form>
                         </div>
-
-                        <div>
-                            <label>
-                            <h2> Пароль </h2>
-                            <input
-                                id ="passwordInput"
-                                name="password"
-                                type="password"
-                                onChange={this.handleInputChange} 
-                                />
-                            </label>
+                    </Col>
+                    <Col lg={6} id="body_content">
+                        <div className="container-left">
+                            <h2 className="Font_Caption">Ещё не зарегистрированы?</h2>
+                            <h3 className="Font_main">Создавте свою учетную запись - это легко и займёт не больше минуты!</h3>
+                            <li id="Sign_up"><a href="#" id="Sign_in">Зарегистрироваться</a></li>
                         </div>
-
-                        <div>
-                            <input
-                            name="rememberMe"
-                            type="checkbox"
-                            checked = {this.state.rememberMe}
-                            onChange= {this.handleInputChange}
-                            />
-                        </div>
-
-                        <div>
-                            <button onClick={this.handleToggleClick}>
-                                Войти
-                            </button>
-                        </div>
-                </div>);
+                    </Col>
+                </Row>
+            </Grid>
+            <Footer />
+        </div>);
     }
 }
