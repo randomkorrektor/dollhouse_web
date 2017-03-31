@@ -21,7 +21,6 @@ export class ProductData extends React.Component {
             </div>
         );
     }
-
 }
 
 export default class ProductsPage extends React.Component {
@@ -106,5 +105,4 @@ export default class ProductsPage extends React.Component {
             <Footer />
         </div>);
     }
-
 }
