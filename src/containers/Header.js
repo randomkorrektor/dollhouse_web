@@ -33,22 +33,24 @@ export default class Header extends React.Component {
     render() {
         let right;
         if (this.state.user) {
-            right = (<Nav pullRight={true}>
+            right = (<Nav className="Navbar_font" pullRight={true}>
                 <NavItem href="#">
                     <img className="Navbar_Avatar" src={this.state.user.picture} />
                 </NavItem>
-                <NavDropdown title={this.state.user.name} className="DropHigh UserName" >
+                <NavDropdown title={this.state.user.name} className="DropHigh" id="UserName" >
                     <MenuItem >Профиль</MenuItem>
+                    <MenuItem divider />
                     <MenuItem onClick={this.logout.bind(this)}>Выход</MenuItem>
                 </NavDropdown>
             </Nav>);
+
         } else {
 
-            right = (<Nav pullRight={true}>
-                <NavItem href="#/signup">
+            right = (<Nav className="Navbar_font" pullRight={true}>
+                <NavItem className="Navbar_font_element" href="#/signup">
                     Зарегестрироваться
                 </NavItem>
-                <NavItem href="#/signin">
+                <NavItem className="Navbar_font_element" href="#/signin">
                     Войти
                 </NavItem>
             </Nav>);

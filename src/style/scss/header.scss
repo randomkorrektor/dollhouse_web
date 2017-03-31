@@ -41,21 +41,19 @@
         
         .Navbar_Avatar {
             height: 30px;
-            margin-top: 10px;
         }
 
         .DropHigh {
-            margin-top: 10px;
             margin-left: 5px;
             margin-right: 20px;
         }
 
-        .UserName {
+        #UserName {
             font-size: 15px!important;
             font-size: 150%;
             
             font-family: Navbar_ts, 'Arial', bold;
-            color: #f8f8ff;
+            color: #f8f8ff!important;
             margin-left: 6px;
             margin-right: 6px;
             text-decoration: none;

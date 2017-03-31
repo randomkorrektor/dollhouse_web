@@ -46,6 +46,7 @@ export default class SignInPage extends React.Component {
         }
     }
 
+
     render() {
         return (<div>
             <Header />
@@ -69,7 +70,7 @@ export default class SignInPage extends React.Component {
                                 <input
                                     type="password"
                                     className="form-control"
-                                    onChange={this.handleInputChange.bind(this, 'password1')}
+                                    onChange={this.handleInputChange.bind(this, 'password')}
                                 />
                             </div>
                         </div>
