@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, NavItem, Navbar, MenuItem, NavDropdown } from 'react-bootstrap';
+import Utils from './Utils';
 import {
     BrowserRouter as Router,
     Route,
@@ -17,14 +18,7 @@ export default class Header extends React.Component {
     async componentDidMount() {
         const session = localStorage.getItem('session');
         if (session) {
-            const auth = await fetch(`http://192.168.0.102:3000/api/user?session=${session}`)
-                .then(r => r.json())
-                .then((r) => {
-                    if (r.success) {
-                        return r.data;
-                    }
-                    throw r.error
-                });
+            const auth = await Utils.Profile(session);
             this.setState({
                 user: auth
             });
