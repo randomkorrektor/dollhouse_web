@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import Utils from './Utils';
 import Header from './Header';
 import Footer from './Footer';
 import {
@@ -25,14 +26,7 @@ export default class SignInPage extends React.Component {
 
     async handleToggleClick(event) {
         try {
-            const auth = await fetch(`http://192.168.0.102:3000/api/auth?email=${this.state.email}&password=${this.state.password}`)
-                .then(r => r.json())
-                .then((r) => {
-                    if (r.success) {
-                        return r.data;
-                    }
-                    throw r.error
-                });
+            const auth = await Utils.SignIn(this.state.email, this.state.password);
             localStorage.setItem('session', auth._id);
             console.log(auth);
             window.location.replace('/#/products')

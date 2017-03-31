@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import Utils from './Utils';
 import Header from './Header';
 import Footer from './Footer';
 import {
@@ -31,24 +32,7 @@ export default class SignUpPage extends React.Component {
             return;
         } else {
             try {
-                const auth = await fetch('http://192.168.0.102:3000/api/auth', {
-                    headers: new Headers({
-                        "Content-Type": "application/json"
-                    }),
-                    body: JSON.stringify({
-                        email: this.state.email,
-                        password: this.state.password1,
-                        name: this.state.name,
-                    }),
-                    method: 'post'
-                })
-                    .then(r => r.json())
-                    .then((r) => {
-                        if (r.success) {
-                            return r.data;
-                        }
-                        throw r.error
-                    });
+                const auth = await Utils.SignUp(this.state.email, this.state.password1, this.state.name);
                 localStorage.setItem('session', auth.session._id);
                 console.log(auth);
                 window.location.replace('/#/products')
@@ -59,7 +43,7 @@ export default class SignUpPage extends React.Component {
     }
     componentDidMount() {
         const session = localStorage.getItem('session');
-        if(session){
+        if (session) {
             window.location.replace('/#/products');
         }
     }
