@@ -17,6 +17,7 @@
             }
         }
     }
+}
 
     .sign_up{
         background: #FF6C0D;
@@ -25,11 +26,11 @@
         padding-top: 10px;
         padding-bottom: 10px;
         color: #f8f8ff;
-
+        cursor: pointer;
+        width: 100%;
         
         &:active {
             background: #C8580F;
             border: 1px solid #666666;
         }
     }
-}
