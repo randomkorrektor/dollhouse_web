@@ -1,0 +1,69 @@
+.footer {
+    height: 160px;
+    background: #a2be33;
+    border-bottom-color: black;
+    border-top-style: solid;
+    border-top-width: 1px;  
+    margin-top: 190px;        
+
+
+
+    .Logo_foot{
+        position: absolute;
+        z-index: 1300;
+        height: 100px;
+        margin-top: 25px;
+        margin-bottom: 4px;
+    }
+    .container-left {
+        margin-left: 28px;
+    }
+}
+.Font_Caption {
+    font-family: Navbar_ts;
+    font-size: 120%;
+    }
+.Font_main {
+    font-family: 'AGOptCyrillic Normal', 'AGOptCyrillic';
+    font-size: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    } 
+.input_footer {
+    height: 30px;
+    border-radius: 0!important;
+    margin-bottom: 5px;
+    }   
+.input_footer2 {
+    margin-top: 48px;
+    }
+.inputmass {
+    height: 20px;
+    } 
+#Messent {
+    width: 25px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    }           
+.logofoot {
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 8px;
+    margin-top: 22px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    }
+.logofoot:hover {
+    box-shadow: inset rgba(255, 255, 255, .7) 0 0 20px 5px, rgba(255, 255, 255, .6) 0 0 20px 5px;
+    height: 46px;
+    margin-right: 7px;
+    margin-left: 5px;
+    margin-top: 15px;
+    }
+#Copyrite {
+    font-size: 100%;
+    position: absolute;
+    top: 115px;
+    right: 25px;
+    }
