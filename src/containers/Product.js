@@ -4,7 +4,8 @@ import Header from './Header';
 import {
     Link
 } from 'react-router';
-
+//
+import Comments from './Comments';
 
 export class ProductData extends React.Component {
                
@@ -107,6 +108,10 @@ addToCart(event) {
                         В КОРЗИНУ
                         </button> 
                 </div>
+
+                {/* Надпись комментарии внутри собственно Comments */}
+                <Comments />
+
             </div>
                     );
     }
