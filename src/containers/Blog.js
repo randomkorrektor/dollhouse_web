@@ -81,7 +81,7 @@ export default class BlogPage extends React.Component {
 
         return (
             <div>
-
+                
                 <div>
                     Blog Page
                      <Header />

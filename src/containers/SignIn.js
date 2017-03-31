@@ -69,7 +69,7 @@ export default class SignInPage extends React.Component {
                     <Col lg={6} id="body_content">
                         <div className="container-left">
                             <h2 className="Font_Caption">Ещё не зарегистрированы?</h2>
-                            <h3 className="Font_main">Создавте свою учетную запись - это легко и займёт не больше минуты!</h3>
+                            <h3 className="Font_main">Создайте свою учетную запись - это легко и займёт не больше минуты!</h3>
                             <li id="Sign_up"><a href="#" id="Sign_in">Зарегистрироваться</a></li>
                         </div>
                     </Col>
