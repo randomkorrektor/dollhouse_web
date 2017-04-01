@@ -1,0 +1,18 @@
+.profile_container {
+    margin-top: 120px;
+
+    .avatar{
+        margin-bottom: 30px;
+
+        .dimmer {
+            width: calc(100% - 30px);
+            height: 20px;
+            background-color: black;
+            position: absolute;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

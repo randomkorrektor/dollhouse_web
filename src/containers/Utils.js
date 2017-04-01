@@ -41,5 +41,15 @@ export default {
                 }
                 throw r.error
             });
-    }
+    },
+    Products: () => {
+        return fetch(`${host}api/product`)
+            .then(r => r.json())
+            .then((r) => {
+                if (r.success) {
+                    return r.data;
+                }
+                throw r.error
+            });
+    },
 };

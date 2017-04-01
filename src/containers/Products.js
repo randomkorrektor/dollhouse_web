@@ -1,5 +1,7 @@
 import React from 'react';
+import { Grid, Row, Col, DropdownButton, MenuItem, Button } from 'react-bootstrap';
 import Header from './Header';
+import Utils from './Utils';
 import Footer from './Footer';
 import {
     Link
@@ -14,94 +16,72 @@ export class ProductData extends React.Component {
 
     render() {
         return (
-            <div>
-                <img src={this.props.imgSrc} className="img-responsive" />
-                <h1> {this.props.title} </h1>
-                <h2> {this.props.price} </h2>
-            </div>
+            <Col lg={4} className="item">
+                <div>
+                    <img src={this.props.imgSrc} />
+                </div>
+                <div className="titleContainer">
+                    <span className="title Navbar_ts">{`"${this.props.title}"`}</span>
+                </div>
+                <div className="buttons">
+                    <div className="cost">{`${this.props.price}, р.`}</div>
+                    <Button className="to_cart" onClick={this.props.onClick}>В корзину »</Button>
+                </div>
+            </Col>
         );
     }
 }
+
 
 export default class ProductsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            productData: [
-                {
-                    title: "DatFace",
-                    price: "25$",
-                    imgSrc: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg",
-                    productLink: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg"
-                },
-
-                {
-                    title: "RapeFace2",
-                    price: "42$",
-                    imgSrc: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg",
-                    productLink: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg"
-                },
-
-                {
-                    title: "CornFace3",
-                    price: "16$",
-                    imgSrc: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg",
-                    productLink: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg"
-                },
-
-                {
-                    title: "BurnFace4",
-                    price: "31$",
-                    imgSrc: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg",
-                    productLink: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn9tUr2djnjXjjxWGSXhQYhb_rI-s1uBg-fS4h-zrs48aKfwqOMg"
-                }
-            ]
+            productData: []
         };
-        this.addToCart = this.addToCart.bind(this);
     }
 
     addToCart(number) {
 
         var stateProductData = this.state.productData[number]
-        var title = stateProductData.title //as key
-        if (!localStorage.getItem(title)) {
+        var _id = stateProductData._id //as key
+        if (!localStorage.getItem(_id)) {
             var productData = {
                 price: stateProductData.price,
                 cartImg: stateProductData.imgSrc,
                 //count: 1
             }
             var serialObj = JSON.stringify(productData);
-            localStorage.setItem(title, serialObj);
+            localStorage.setItem(_id, serialObj);
         }
-        //for more than one 
-        /*
-            else {
-            var objForUp = JSON.parse(localStorage.getItem(title));
-            objForUp.count++;
-            var objForUpInString = JSON.stringify(objForUp);
-            localStorage.setItem(title, objForUpInString);
-        }
-        */
     }
+
+    async componentDidMount() {
+        const auth = await Utils.Products();
+        this.setState({
+            productData: auth
+        });
+    }
+
 
     render() {
         const products = this.state.productData.map((product, i) =>
             <div>
                 <ProductData
-                    key={i}
-                    title={product.title}
+                    key={product._id}
+                    title={product.name}
                     price={product.price}
-                    imgSrc={product.imgSrc}
-                    productLink={product.productLink}
+                    imgSrc={product.pictures[0]}
+                    productLink={product._id}
+                    onClick={this.addToCart.bind(this, i)}
                 />
-                <button onClick={this.addToCart.bind(this, i)}>
-                    В КОРЗИНУ
-                    </button>
             </div>)
 
         return (<div>
             <Header />
-            {products}
+            <Grid className="shop_container">
+                {products}
+            </Grid>
             <Footer />
         </div>);
     }
