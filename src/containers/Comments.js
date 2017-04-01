@@ -62,11 +62,14 @@ export default class CommentsComponent extends React.Component {
             <div>
                 <h1>Комментарии</h1>
                 {comments}
+
                 <h2>Оставить комментарий</h2>
+                
                 <input />
                 <button onClick={this.commentPublish}>
                         Отправить
                 </button>
+
             </div> 
         );
     }
