@@ -1,12 +1,11 @@
 import React from 'react';
 
-export default class AddProductPage extends React.Component {
+export default class AddBlogPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
                             title: "",
-                            cost: "",
-                            description: "",
+                            text: "",
                             imgs: []
         };
         this.filesUpdate = this.filesUpdate.bind(this);
@@ -31,7 +30,7 @@ removeFile (number) {
 }
 
 filesUpdate (event) {
-       
+
         var lengthFile = event.target.files.length-1;
         var lengthImgs = this.state.imgs.length;
        
@@ -46,10 +45,9 @@ filesUpdate (event) {
         const imgsChanged = this.state.imgs;
         imgsChanged.push(event.target.files[lengthFile]);
         this.setState(imgsChanged); 
-    
 }
 
-addToStore (event) {
+addToBlog (event) {
 
 }
         render() {
@@ -65,8 +63,8 @@ addToStore (event) {
              return (
              <div>
                  <div>
-                                        {/* Заполнение описания товара*/}
-                     <h1>Добавление нового товара</h1>
+                                        {/* Заполнение блога*/}
+                     <h1>Публикация в блог</h1>
                      <div>
                         <label>
                             Название
@@ -75,14 +73,8 @@ addToStore (event) {
                      </div>
                      <div>
                         <label>
-                            Цена
-                            <input type='number' onChange={this.handleInputChange.bind(this, 'cost')}/>
-                        </label>
-                     </div>
-                     <div>
-                        <label>
-                            Описание
-                            <input type='text' onChange={this.handleInputChange.bind(this, 'description')}/>
+                            Текст
+                            <input type='text' onChange={this.handleInputChange.bind(this, 'text')}/>
                         </label>
                      </div>
                      <div>
@@ -101,7 +93,7 @@ addToStore (event) {
                          {panels}
                     </div>   
                     <div>
-                         <button onClick={this.addToStore.bind(this, i)}> Добавить в магазин </button>
+                         <button onClick={this.addToStore.bind(this, i)}> Опубликовать </button>
                     </div>                
                  </div>
              </div>
