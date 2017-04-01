@@ -52,4 +52,14 @@ export default {
                 throw r.error
             });
     },
+    Product: (id) => {
+        return fetch(`${host}api/product/${id}`)
+            .then(r => r.json())
+            .then((r) => {
+                if (r.success) {
+                    return r.data;
+                }
+                throw r.error
+            });
+    },
 };

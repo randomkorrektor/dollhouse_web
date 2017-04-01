@@ -14,6 +14,10 @@ export class ProductData extends React.Component {
         super(props);
     }
 
+    toProduct(id) {
+        window.location.replace('/#/product/' + id);
+    }
+
     render() {
         return (
             <Col lg={4} className="item">
@@ -21,8 +25,9 @@ export class ProductData extends React.Component {
                     <img src={this.props.imgSrc} />
                 </div>
                 <div className="titleContainer">
-                    <span className="title Navbar_ts">{`"${this.props.title}"`}</span>
+                    <span className="title Navbar_ts" onClick={this.toProduct.bind(this, this.props.id)}>{`${this.props.title}`}</span>
                 </div>
+
                 <div className="buttons">
                     <div className="cost">{`${this.props.price}, р.`}</div>
                     <Button className="to_cart" onClick={this.props.onClick}>В корзину »</Button>
@@ -68,6 +73,7 @@ export default class ProductsPage extends React.Component {
         const products = this.state.productData.map((product, i) =>
             <div>
                 <ProductData
+                    id={product._id}
                     key={product._id}
                     title={product.name}
                     price={product.price}

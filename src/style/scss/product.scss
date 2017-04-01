@@ -1,0 +1,39 @@
+.product_container{
+        margin-top: 160px;
+        .productInfo{
+            text-align: center;
+
+            .titleContainer{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+                display: inline-block;
+
+                .title {
+                    width: 360px;
+                    border-bottom: 2px solid;
+                    padding-bottom: 8px;
+                    font-size: 140%;
+                }
+            }
+            .costContainer{
+                
+                margin-bottom: 96px;
+
+                .cost {
+                    font-size: 140%;
+                }
+            }
+            .descriptionContainer {
+                display: inline-block;
+
+                .title {
+                    margin-bottom: 8px;
+                }
+                .description {
+                    width: 370px;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+}
